@@ -45,15 +45,15 @@ jobs:
             sudo systemctl start nginx
             nginx -v
 
-      - name: Install Node.js on remote server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ubuntu
-          key: ${{ secrets.KEY }}
-          script: |
-            # Install Node.js (use Node 20.x, latest LTS)
-            curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-            sudo apt install -y nodejs
-            node -v
-            npm -v
+      # - name: Install Node.js on remote server
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ubuntu
+      #     key: ${{ secrets.KEY }}
+      #     script: |
+      #       # Install Node.js (use Node 20.x, latest LTS)
+      #       curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+      #       sudo apt install -y nodejs
+      #       node -v
+      #       npm -v
